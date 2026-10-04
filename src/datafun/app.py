@@ -111,7 +111,7 @@ TARGET_COLUMN: Final[str] = "body_mass_g"
 # This must match a numeric column name EXACTLY
 # as it appears in the data file.
 
-FEATURE_COLUMN: Final[str] = "bill_length_mm"
+FEATURE_COLUMN: Final[str] = "flipper_length_mm"
 
 # === DOCUMENT WHY THE FEATURE MIGHT HELP ===
 

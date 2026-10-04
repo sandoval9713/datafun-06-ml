@@ -65,6 +65,14 @@ Follow the
 [step-by-step workflow guide](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
 carefully.
 
+## Phase 4 Technical Modification
+
+I changed the regression feature from `bill_length_mm` to `flipper_length_mm` while keeping `body_mass_g` as the target.
+
+I made this change to see whether flipper length would be a useful predictor of penguin body mass.
+
+After running the project again, the program executed successfully and generated the updated regression results and charts.
+
 ## Success
 
 After completing Phase 1. **Start & Run**, you'll have the example project,
