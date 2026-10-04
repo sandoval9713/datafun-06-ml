@@ -93,7 +93,7 @@ Follow the guide for the **full instructions**.
 Open a machine terminal in your `Repos` folder:
 
 ```shell
-git clone https://github.com/denisecase/datafun-06-ml
+git clone https://github.com/sandoval9713/datafun-06-ml
 
 cd datafun-06-ml
 code .
@@ -187,7 +187,7 @@ Press `Ctrl c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
 
 ## Documentation
 
-- [Documentation](https://denisecase.github.io/datafun-06-ml/)
+- [Documentation](https://sandoval9713.github.io/datafun-06-ml/)
 
 ## Data Card
 
