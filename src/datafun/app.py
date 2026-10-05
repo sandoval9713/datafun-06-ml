@@ -82,7 +82,7 @@ LOG: logging.Logger = get_logger("P06", level="DEBUG")
 
 # === LOCATE THE DATA FILE ===
 
-DATA_FILE_PATH: Final[Path] = Path("data") / "raw" / "penguins.csv"
+DATA_FILE_PATH: Final[Path] = Path("data") / "raw" / "owid-co2-data-subset.csv"
 
 # === LOCATE THE CHART OUTPUT ===
 
@@ -102,7 +102,7 @@ GRAIN: Final[str] = "one penguin"
 # This must match a numeric column name EXACTLY
 # as it appears in the data file.
 
-TARGET_COLUMN: Final[str] = "body_mass_g"
+TARGET_COLUMN: Final[str] = "co2"
 
 # === DECLARE THE FEATURE ===
 
@@ -111,7 +111,7 @@ TARGET_COLUMN: Final[str] = "body_mass_g"
 # This must match a numeric column name EXACTLY
 # as it appears in the data file.
 
-FEATURE_COLUMN: Final[str] = "flipper_length_mm"
+FEATURE_COLUMN: Final[str] = "population"
 
 # === DOCUMENT WHY THE FEATURE MIGHT HELP ===
 
@@ -120,15 +120,11 @@ FEATURE_COLUMN: Final[str] = "flipper_length_mm"
 # The model and evaluation will provide evidence.
 
 FEATURE_DECISION: Final[str] = r"""
-I want to predict body mass.
+I selected population as the feature because countries with larger populations may produce more CO2 emissions.
 
-I selected bill length as the feature.
+I want to investigate whether population can help predict CO2 emissions.
 
-A bigger penguin may have both a longer bill and more mass,
-so bill length might contain useful information
-for predicting body mass.
-
-I do not know yet how well bill length will predict body mass.
+I do not know yet how well population will predict CO2 emissions.
 The modeling process will provide evidence.
 """
 
@@ -181,8 +177,8 @@ BASELINE_DECISION: Final[str] = r"""
 Before evaluating the LinearRegression model,
 I need a simple baseline for comparison.
 
-The baseline will ignore bill length
-and predict the average body mass
+The baseline will ignore population
+and predict the average CO2 emissions
 from the training data for every test observation.
 
 A useful predictive model should improve
@@ -437,9 +433,9 @@ def main() -> None:
     # CUSTOM: The analyst can customize
     # the returned Matplotlib Axes object.
 
-    prediction_ax.set_title("Bill Length vs. Body Mass")
-    prediction_ax.set_xlabel("Bill Length (mm)")
-    prediction_ax.set_ylabel("Body Mass (g)")
+    prediction_ax.set_title("population vs. CO2 Emissions")
+    prediction_ax.set_xlabel("population (mm)")
+    prediction_ax.set_ylabel("CO2 Emissions")
     prediction_ax.legend()
 
     save_chart(
@@ -474,9 +470,9 @@ def main() -> None:
     # CUSTOM: The analyst can customize
     # the returned Matplotlib Axes object.
 
-    residual_ax.set_title("Residuals for Bill Length Model")
-    residual_ax.set_xlabel("Bill Length (mm)")
-    residual_ax.set_ylabel("Residual (Actual - Predicted Body Mass)")
+    residual_ax.set_title("Residuals for Population Model")
+    residual_ax.set_xlabel("Population")
+    residual_ax.set_ylabel("Residual (Actual - Predicted CO2 Emissions)")
 
     save_chart(
         residual_ax,
@@ -500,7 +496,7 @@ def main() -> None:
     # in a simple multi-line raw string.
 
     LOG.info(r"""CUSTOM OBSERVATIONS:
-    I used bill length to predict body mass.
+    I used population to predict CO2 emissions.
 
     The baseline RMSE was ...
     The LinearRegression RMSE was ...

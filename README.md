@@ -10,12 +10,14 @@
 [![Zensical docs](https://img.shields.io/badge/Zensical-docs-purple)](https://zensical.org/)
 [![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
 
+
 > Professional Python project: linear regression and predictive analytics.
+
+This project uses linear regression to explore whether population can help predict CO2 emissions using the OWID CO2 dataset.
 
 ## Project Goal
 
-This project introduces **linear regression**, the process of
-fitting a model to data and using it to make predictions.
+This project introduces **Linear regression, the process of fitting a model to data and using it to make predictions.
 
 Think about two variables that might be related:
 
@@ -72,6 +74,12 @@ I changed the regression feature from `bill_length_mm` to `flipper_length_mm` wh
 I made this change to see whether flipper length would be a useful predictor of penguin body mass.
 
 After running the project again, the program executed successfully and generated the updated regression results and charts.
+
+## Phase 5 Custom Project
+
+For the final project, I changed the analysis to use the OWID CO2 dataset. I used population as the feature and CO2 emissions as the target.
+
+The project ran successfully and generated updated prediction and residual charts. The residual plot showed that the errors were not evenly distributed, so population alone does not fully explain CO2 emissions.
 
 ## Success
 
